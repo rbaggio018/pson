@@ -1,0 +1,5 @@
+<%= form_tag books_path, :method => "POST", :html => { :multipart => true }, :remote => true do %>
+  <%= label_tag :file %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload File" %>
+<% end %>
