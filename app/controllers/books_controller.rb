@@ -7,10 +7,13 @@ class BooksController < ApplicationController
   def create
     book_attributes = BookFile.parse(params[:file])
     @book = Book.new(book_attributes)
-    @book.save # assume it's successful
 
     respond_to do |format|
-      format.js
+      if @book.save
+        format.js
+      else
+        format.js { render 'failure_alert' }
+      end
     end
   end
 
