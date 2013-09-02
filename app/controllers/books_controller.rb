@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   def index
+    @books = Book.order("id desc")
   end
 
   def create
@@ -10,5 +11,9 @@ class BooksController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def show
+    @book = Book.find(params[:id])
   end
 end

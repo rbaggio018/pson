@@ -1,6 +1,6 @@
 Pearson::Application.routes.draw do
 
-  resources :books, :only => [:index, :create]
+  resources :books, :only => [:index, :create, :show]
 
   root :to => 'books#index'
 

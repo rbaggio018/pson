@@ -2,3 +2,15 @@
 <div>
   <%= render :partial => "book_creation_form" %>
 </div>
+<div>
+  <table>
+    <th>
+      <tr>
+        Title
+      </tr>
+    </th>
+    <tbody class='book-list'>
+      <%= render @books %>
+    </tbody>
+  </table>
+</div>
