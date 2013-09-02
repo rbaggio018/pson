@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     book_attributes = BookFile.parse(params[:file])
     @book = Book.new(book_attributes)
     @book.save # assume it's successful
+
     respond_to do |format|
       format.js
     end
@@ -15,5 +16,14 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+
+    respond_to do |format|
+      format.js
+    end
   end
 end

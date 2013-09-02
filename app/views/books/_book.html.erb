@@ -1,3 +1,4 @@
-<tr>
+<tr data-id='<%= book.id %>'>
   <td><%= link_to book.title, book_path(book) %></td>
+  <td><%= link_to "Delete", book_path(book), :method => :delete, :remote => true %></td>
 </tr>
