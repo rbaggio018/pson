@@ -5,4 +5,6 @@ class Book < ActiveRecord::Base
   belongs_to :publisher
 
   accepts_nested_attributes_for :publisher, :chapters
+
+  validates :book_code, :uniqueness => true
 end
